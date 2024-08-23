@@ -1,0 +1,53 @@
+name: code
+
+on:
+  push:
+  schedule:
+    - cron: "0 20 * * 0"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/master' }}
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  yarn:
+    strategy:
+      matrix:
+        command:
+          - test
+          - prettier:check
+          - tsc:check
+      fail-fast: false
+
+    name: ${{ matrix.command }}
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: .node-version
+
+      - run: yarn install --immutable --immutable-cache
+
+      - run: yarn ${{ matrix.command }}
+
+  check-cache:
+    name: Cache integrity check
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: .node-version
+
+      - run: yarn install --immutable --immutable-cache --check-cache

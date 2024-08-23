@@ -10,6 +10,9 @@
   ],
   "scripts": {
     "test": "node --import tsx --test src/*.test.ts",
+    "prettier:check": "prettier --list-different .",
+    "prettier:fix": "prettier --write .",
+    "tsc:check": "tsc --noEmit",
     "build": "tsc",
     "publish-lib": "npm run build && npm publish",
     "publish-beta": "npm run build && npm publish --tag beta",
