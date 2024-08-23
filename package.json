@@ -1,19 +1,18 @@
 {
   "name": "envfury",
   "version": "0.1.3",
-  "type": "module",
   "description": "A collection of utilities for procedural reading of the process environment variables.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
   "files": [
-    "/dist"
+    "dist/"
   ],
   "exports": {
-    "./*": {
-      "types": "./dist/types/*.d.ts",
-      "require": "./dist/cjs/*.js",
-      "import": "./dist/esm/*.js",
-      "default": "./dist/esm/*.js"
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js",
+      "default": "./dist/esm/index.js"
     }
   },
   "scripts": {
