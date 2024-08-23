@@ -13,7 +13,9 @@
     "prettier:check": "prettier --list-different .",
     "prettier:fix": "prettier --write .",
     "tsc:check": "tsc --noEmit",
-    "build": "tsc",
+    "build": "tsc -b",
+    "clean": "rimraf lib && rimraf tsconfig.tsbuildinfo",
+    "prepack": "yarn clean && yarn build",
     "publish-lib": "npm run build && npm publish",
     "publish-beta": "npm run build && npm publish --tag beta",
     "publish-dryrun": "npm run build && npm publish --dry-run"
@@ -23,6 +25,7 @@
   "devDependencies": {
     "@types/node": "^22.5.0",
     "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
     "tsx": "^4.17.0",
     "typescript": "^5.5.4"
   },
