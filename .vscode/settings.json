@@ -1,0 +1,16 @@
+{
+  "search.exclude": {
+    "**/.yarn": true
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "prettier.ignorePath": ".prettierignore",
+  "eslint.format.enable": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "[yaml][jsonc][javascript][javascriptreact][typescript][typescriptreact][html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
