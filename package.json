@@ -18,8 +18,9 @@
   "author": "sesh92",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^22.5.0",
     "tsx": "^4.17.0",
-    "typescript": "^5.5.4",
-    "@types/node": "^22.5.0"
-  }
+    "typescript": "^5.5.4"
+  },
+  "packageManager": "yarn@4.4.0"
 }
