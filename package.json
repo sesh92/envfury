@@ -1,0 +1,25 @@
+{
+  "name": "envfury",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A collection of utilities for procedural reading of the process environment variables.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "test": "node --import tsx --test src/*.test.ts",
+    "build": "tsc",
+    "publish-lib": "npm run build && npm publish",
+    "publish-beta": "npm run build && npm publish --tag beta",
+    "publish-dryrun": "npm run build && npm publish --dry-run"
+  },
+  "author": "sesh92",
+  "license": "MIT",
+  "devDependencies": {
+    "tsx": "^4.17.0",
+    "typescript": "^5.5.4",
+    "@types/node": "^22.5.0"
+  }
+}
