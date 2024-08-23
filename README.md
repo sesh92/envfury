@@ -20,69 +20,69 @@ yarn add envfury
 
 ### Core Functions
 
-#### `mustParseOrElse`
+#### `mustParseEnvOrElse`
 
 Returns the parsed value of an environment variable. If the variable is not set, it returns a default value.
 
 ```typescript
-import { mustParseOrElse } from "envfury";
+import { mustParseEnvOrElse } from "envfury";
 
-const value: number = mustParseOrElse("PORT", Number, () => 3000);
+const value: number = mustParseEnvOrElse("PORT", Number, () => 3000);
 console.log(value); // Outputs the value of PORT or 3000 if the variable is not set.
 ```
 
-#### `mustParse`
+#### `mustParseEnv`
 
 Returns the parsed value of an environment variable. If the variable is not set, it throws an error.
 
 ```typescript
-import { mustParse } from "envfury";
+import { mustParseEnv } from "envfury";
 
-const value: number = mustParse("PORT", Number);
+const value: number = mustParseEnv("PORT", Number);
 console.log(value); // Outputs the value of PORT or throws an error if the variable is not set.
 ```
 
-#### `must`
+#### `mustEnv`
 
 Returns the string value of an environment variable. If the variable is not set, it throws an error.
 
 ```typescript
-import { must } from "envfury";
+import { mustEnv } from "envfury";
 
-const value: string = must("API_KEY");
+const value: string = mustEnv("API_KEY");
 console.log(value); // Outputs the value of API_KEY or throws an error if the variable is not set.
 ```
 
-#### `maybeParse`
+#### `maybeParseEnv`
 
 Returns the parsed value of an environment variable. If the variable is not set, it returns a default value.
 
 ```typescript
-import { maybeParse } from "envfury";
+import { maybeParseEnv } from "envfury";
 
-const value: number = maybeParse("TIMEOUT", Number, 5000);
+const value: number = maybeParseEnv("TIMEOUT", Number, 5000);
 console.log(value); // Outputs the value of TIMEOUT or 5000 if the variable is not set.
 ```
 
-#### `maybe`
+#### `maybeEnv`
 
 Returns the string value of an environment variable. If the variable is not set, it returns a default value.
 
 ```typescript
-import { maybe } from "envfury";
+import { maybeEnv } from "envfury";
 
-const value: string = maybe("ENV", "development");
+const value: string = maybeEnv("ENV", "development");
 console.log(value); // Outputs the value of ENV or 'development' if the variable is not set.
 ```
 
-#### `mustOrElse`
+#### `mustEnvOrElse`
 
 Returns the string value of an environment variable. If the variable is not set, it returns a value provided by a fallback function.
 
 ```typescript
-import { mustOrElse } from "envfury";
+import { mustEnvOrElse } from "envfury";
 
-const value: string = mustOrElse("HOST", () => "localhost");
+const value: string = mustEnvOrElse("HOST", () => "localhost");
 console.log(value); // Outputs the value of HOST or 'localhost' if the variable is not set.
 ```
 
