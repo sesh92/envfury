@@ -8,7 +8,7 @@ import {
   mustEnvOrElse,
   mustParseEnv,
   mustParseEnvOrElse,
-} from "./env.ts";
+} from ".";
 
 test("mustParseEnvOrElse should return parsed value if env variable is set", () => {
   const TEST_ENV_KEY = "TEST_ENV_KEY";
