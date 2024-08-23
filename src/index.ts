@@ -1,8 +1,8 @@
 export {
-  maybe,
-  must,
-  maybeParse,
-  mustParse,
-  mustOrElse,
-  mustParseOrElse,
+  maybeEnv,
+  mustEnv,
+  maybeParseEnv,
+  mustParseEnv,
+  mustEnvOrElse,
+  mustParseEnvOrElse,
 } from "./env";
