@@ -1,6 +1,6 @@
 {
   "name": "envfury",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "A collection of utilities for procedural reading of the process environment variables.",
   "main": "dist/index.js",
@@ -8,13 +8,21 @@
   "files": [
     "/dist"
   ],
+  "exports": {
+    "./*": {
+      "types": "./dist/types/*.d.ts",
+      "require": "./dist/cjs/*.js",
+      "import": "./dist/esm/*.js",
+      "default": "./dist/esm/*.js"
+    }
+  },
   "scripts": {
     "test": "node --import tsx --test src/*.test.ts",
     "prettier:check": "prettier --list-different .",
     "prettier:fix": "prettier --write .",
     "tsc:check": "tsc --noEmit",
-    "build": "tsc -b",
-    "clean": "rimraf lib && rimraf tsconfig.tsbuildinfo",
+    "build": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.types.json",
+    "clean": "rimraf dist && rimraf tsconfig.tsbuildinfo",
     "prepack": "yarn clean && yarn build",
     "publish-lib": "npm run build && npm publish",
     "publish-beta": "npm run build && npm publish --tag beta",
@@ -29,5 +37,9 @@
     "tsx": "^4.17.0",
     "typescript": "^5.5.4"
   },
-  "packageManager": "yarn@4.4.0"
+  "packageManager": "yarn@4.4.0",
+  "bugs": {
+    "url": "https://github.com/sesh92/envfury/issues"
+  },
+  "homepage": "https://github.com/sesh92/envfury#readme"
 }
