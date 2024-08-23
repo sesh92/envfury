@@ -92,4 +92,4 @@ This package is inspired by a similar crate available for Rust, which provides u
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/sesh92/envfury/blob/master/MIT_LICENSE.txt) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/sesh92/envfury/blob/master/MIT-LICENSE.txt) file for details.
